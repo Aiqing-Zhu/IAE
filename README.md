@@ -82,7 +82,7 @@ to the CPU if `torch.cuda.is_available()` is false, at the obvious cost.
 Everything Examples 2 and 3 need is **already inside this folder**; Example 1 is a
 separate 2.6 GB [Poisson data archive](https://drive.google.com/file/d/1iGOd-tSLC4QZ2drSR5TVX9nn1sIs19vV/view?usp=sharing)
 that sits *beside* it. The archive already contains a top-level `poisson_data/`
-directory. From `code-github/`, save the archive as `../poisson_data.zip` and extract it:
+directory. From `this folder/`, save the archive as `../poisson_data.zip` and extract it:
 
 ```bash
 python -m zipfile -e ../poisson_data.zip ..
