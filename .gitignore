@@ -5,6 +5,8 @@
 **/results/
 **/figures/
 
+*.zip
+
 __pycache__/
 *.py[cod]
 *.egg-info/

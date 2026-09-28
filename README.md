@@ -79,10 +79,19 @@ to the CPU if `torch.cuda.is_available()` is false, at the obvious cost.
 
 ## Data and checkpoints
 
-Everything Examples 2 and 3 need is **already inside this folder**; Example 1 is a
-separate 2.6 GB [Poisson data archive](https://drive.google.com/file/d/1iGOd-tSLC4QZ2drSR5TVX9nn1sIs19vV/view?usp=sharing)
-that sits *beside* it. The archive already contains a top-level `poisson_data/`
-directory. From `this folder/`, save the archive as `../poisson_data.zip` and extract it:
+For Examples 2 and 3, download the
+[data and checkpoints archive](https://drive.google.com/file/d/1BeBehr6ZumflVxgqJW7HRgjXJx2Kr9tz/view?usp=sharing)
+as `IAE_2_3_data.zip` into the repository root and extract it there:
+
+```bash
+python -m zipfile -e IAE_2_3_data.zip .
+```
+
+The archive contains top-level `data/`, `cache/`, and `checkpoints/` directories.
+Example 1 uses a separate 2.6 GB
+[Poisson data archive](https://drive.google.com/file/d/1iGOd-tSLC4QZ2drSR5TVX9nn1sIs19vV/view?usp=sharing)
+with a top-level `poisson_data/` directory. From the repository root, save it as
+`../poisson_data.zip` and extract it into the parent directory:
 
 ```bash
 python -m zipfile -e ../poisson_data.zip ..
@@ -95,7 +104,7 @@ poisson_data/                         <- all of Example 1 (downloaded separately
   raw_{train,train_b,test}.npz           the meshed domains
   mfe_{train,test}.npz                   query points, targets, 2D/1D-MFE codes
   iae_{train,test}_{cosine,legendre}.npz IAE codes, both bases
-this folder/                          <- this folder
+this folder/                          <- repository root
   data/ex2_hele_shaw/interfaces.pkl        the interfaces of all 1387 trajectories
   data/ex3_stokes_surfactant/traj_*.pkl    interfaces AND the surfactant on them
   cache/ex2_hele_shaw/                     train_pairs.npz  test_enc.pkl
@@ -103,8 +112,8 @@ this folder/                          <- this folder
   checkpoints/ex{2,3}_*/                   trained operators, 5 seeds each
 ```
 
-So `poisson_data/` and `this foloder/` must be siblings. Every location can be moved
-with an environment variable:
+So `poisson_data/` and the repository root must be siblings. Every location can be
+moved with an environment variable:
 
 | variable | default | contents |
 |---|---|---|
@@ -200,7 +209,8 @@ A time-conditioned operator maps `(Γ(0), source)` and a discrete time `t_k = 0.
 **directly** to `Γ(t_k)` — no autoregression, no re-initialization, so a merge is
 predicted in one shot from `t = 0`.
 
-The distributed bundle already contains the codes, so training starts immediately:
+The Example 2 download contains precomputed codes, so training can start after
+extraction:
 
 ```bash
 cd examples/ex2_hele_shaw
@@ -247,8 +257,8 @@ and cut down to `r × r`, which is exact for an orthonormal basis.
 The same idea with **two** code heads: interface *and* the surfactant living on it
 are predicted jointly from the initial state.
 
-The distributed bundle contains both the interface + surfactant trajectories and their
-codes, so as with Example 2 training starts immediately:
+The Example 3 download contains both the interface + surfactant trajectories and their
+codes, so training can start after extraction:
 
 ```bash
 cd examples/ex3_stokes_surfactant
