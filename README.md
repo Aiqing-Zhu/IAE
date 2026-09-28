@@ -80,7 +80,7 @@ to the CPU if `torch.cuda.is_available()` is false, at the obvious cost.
 ## Data and checkpoints
 
 For Examples 2 and 3, download the
-[data and checkpoints archive](https://drive.google.com/file/d/1BeBehr6ZumflVxgqJW7HRgjXJx2Kr9tz/view?usp=sharing)
+[data and checkpoints archive](https://drive.google.com/file/d/1BeBehr6ZumflVxgqJW7HRgjXJx2Kr9tz/view?usp=sharing) (about 348 MB)
 as `IAE_2_3_data.zip` into the repository root and extract it there:
 
 ```bash
