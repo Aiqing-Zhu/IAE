@@ -1,0 +1,10 @@
+# Interface Autoencoder -- encoding, operator training, evaluation, figures.
+numpy>=1.26
+scipy>=1.11
+torch>=2.2
+matplotlib>=3.7
+contourpy>=1.2
+
+# The GINO baseline in baselines/gino/ additionally needs `neuraloperator==2.0.0`
+# (which pulls in tensorly / tensorly-torch).  It is NOT required for anything else
+# in this repository -- see baselines/gino/README.md.

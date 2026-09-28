@@ -1,0 +1,16 @@
+# Datasets, derived encodings, trained weights and generated outputs are not tracked.
+/data/
+/cache/
+/checkpoints/
+**/results/
+**/figures/
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# test / build artifacts
+.pytest_cache/
+build/
+dist/
